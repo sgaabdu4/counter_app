@@ -36,6 +36,7 @@ class MyHomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     //adding ref.watch here is a bit risky as it rebuilds the entire widget.
     return Scaffold(
+      //Consumer builder is a better option here
       body: Center(child: Consumer(builder: (context, ref, child) {
         final counter = ref.watch(counterProvider);
         final text = counter ?? 0;
